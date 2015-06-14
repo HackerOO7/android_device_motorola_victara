@@ -115,7 +115,6 @@ vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
-vendor/lib/libmmcamera_t4k71.so
 vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
@@ -157,12 +156,6 @@ vendor/lib/libchromatix_s5k5e2_hfr_60fps.so
 vendor/lib/libchromatix_s5k5e2_liveshot.so
 vendor/lib/libchromatix_s5k5e2_preview.so
 vendor/lib/libchromatix_s5k5e2_snapshot.so
-vendor/lib/libchromatix_t4k71_common.so
-vendor/lib/libchromatix_t4k71_fhd_30fps.so
-vendor/lib/libchromatix_t4k71_fhd_30fps_video.so
-vendor/lib/libchromatix_t4k71_fhd_60fps.so
-vendor/lib/libchromatix_t4k71_hd_30fps.so
-vendor/lib/libchromatix_t4k71_hd_60fps.so
 
 # CPU
 bin/mpdecision
