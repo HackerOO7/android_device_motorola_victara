@@ -90,6 +90,10 @@ ro.telephony.default_network=22
 telephony.lteOnCdmaDevice=1
 persist.radio.mcfg_enabled=1
 ro.telephony.default_cdma_sub=0
+persist.radio.mbn_path=/fsg/
+persist.radio.multi_mbns=ct.mbn;cu.mbn;cmcc.mbn
+persist.radio.rat_on=combine
+persist.radio.force_on_dc=true
 
 # Camera
 camera2.portability.force_api=1
