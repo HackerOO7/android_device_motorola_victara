@@ -6,9 +6,9 @@
 /data/wapi_certificate(/.*)?            u:object_r:wapi_supplicant_data_file:s0
 
 /dev/bcm2079x-i2c                       u:object_r:nfc_device:s0
-/dev/block/mmcblk0p8                    u:object_r:utags_block_device:s0
-/dev/block/mmcblk0p20                   u:object_r:hob_block_device:s0
-/dev/block/mmcblk0p21                   u:object_r:hob_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/utags     u:object_r:utags_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/hob       u:object_r:hob_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/dhob      u:object_r:hob_block_device:s0
 /dev/block/platform/msm_sdcc.1/by-name/frp       u:object_r:frp_block_device:s0
 /dev/ttyHS3                             u:object_r:adsp_serial_device:s0
 /dev/stm401                             u:object_r:sensors_device:s0
@@ -20,8 +20,7 @@
 /sys/devices/f9924000.i2c/i2c-2/2-0048(/.*)?    u:object_r:sysfs_thermal:s0
 /sys/devices/fd510000.gpio/gpio/gpio144(/.*)?   u:object_r:sysfs_thermal:s0
 /sys/devices/qpnp-charger-ed24c400(/.*)?        u:object_r:sysfs_thermal:s0
-/sys/devices/virtual/graphics/fb0/hbm           u:object_r:display_sysfs:s0
-/sys/devices/virtual/graphics/fb0/rgb           u:object_r:display_sysfs:s0
+/sys/devices/virtual/graphics/fb0/hbm           u:object_r:livedisplay_sysfs:s0
 /sys/vibrator/pwmvalue                          u:object_r:vibeamp_sysfs:s0
 
 /system/bin/adspd                       u:object_r:adspd_exec:s0
