@@ -28,6 +28,3 @@
 /system/bin/batt_health                 u:object_r:batt_health_exec:s0
 /system/bin/stm401                      u:object_r:stm401_exec:s0
 /system/bin/rild.mmi                    u:object_r:rild_exec:s0
-
-# PDS
-/pds(/.*)?                                                  u:object_r:pds_file:s0
