@@ -34,13 +34,14 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 TARGET_NO_BOOTLOADER := true
 
+USE_CLANG_PLATFORM_BUILD := true
+
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/motorola/victara/mkbootimg.mk
@@ -55,11 +56,11 @@ TARGET_KERNEL_CONFIG := cyanogenmod_victara_defconfig
 # Audio
 AUDIO_FEATURE_ENABLED_ANC_HEADSET := true
 AUDIO_FEATURE_ENABLED_EXTERNAL_SPEAKER := true
-AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
 AUDIO_FEATURE_ENABLED_USBAUDIO := true
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_FLUENCE := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
+USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
@@ -69,6 +70,7 @@ BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_SMD_TTY := true
 
 # Camera
+COMMON_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Display
@@ -76,6 +78,7 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+TARGET_USE_COMPAT_GRALLOC_PERFORM := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -101,9 +104,6 @@ TARGET_NR_SVC_SUPP_GIDS := 32
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
-
-# Motorola
-TARGET_USES_MOTOROLA_LOG := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -132,36 +132,16 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Ril
 BOARD_PROVIDES_LIBRIL := true
-
+BOARD_PROVIDES_RILD := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/motorola/victara/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    adspd.te \
-    atvc.te \
-    batt_health.te \
-    device.te \
-    file_contexts \
-    file.te \
-    fsg_file.te \
-    healthd.te \
-    init.te \
-    installd.te \
-    keystore.te \
-    mediaserver.te \
-    mm-qcamerad.te \
-    mpdecision.te \
-    rild.te \
-    rmt_storage.te \
-    stm401.te \
-    system_app.te \
-    system_server.te \
-    thermal-engine.te \
-    ueventd.te \
-    vold.te \
-    wpa.te
+# Vendor Init
+#TARGET_UNIFIED_DEVICE := true
+#TARGET_INIT_VENDOR_LIB := libinit_victara
+#TARGET_LIBINIT_DEFINES_FILE := device/motorola/victara/init/init_victara.cpp
 
 # Vold
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true

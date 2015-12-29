@@ -43,9 +43,6 @@
         <item>"bt-pan"</item>
     </string-array>
 
-    <!-- Is the notification LED brightness adjustable ? Used to decide if the user can set LED brightness -->
-    <bool name="config_adjustableNotificationLedBrightness">true</bool>
-
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
@@ -188,9 +185,6 @@
          flag is set for wifi displays.
     -->
     <bool name="config_wifiDisplaySupportsProtectedBuffers">false</bool>
-
-    <!-- We dont have different firmware for wifi modes, prevent reloading it -->
-    <bool name="config_wifiApFirmwareReload">false</bool>
 
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
                   autodetected from the Configuration. -->
@@ -351,7 +345,7 @@
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
 
     <!-- Component name of the geofence services provider. -->
-    <string name="config_geofenceServicesProvider" translatable="false">com.motorola.motgeofencesvc</string>
+    <string name="config_geofenceProvider" translatable="false">@null</string>
 
     <!-- Component name of the combo network location provider. -->
     <string name="config_comboNetworkLocationProvider" translatable="false">com.qualcomm.location</string>
@@ -362,15 +356,19 @@
     <!-- Default value for proximity check on screen wake
          NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
     -->
-    <bool name="config_proximityCheckOnWake">true</bool>
+    <!--  <bool name="config_proximityCheckOnWake">true</bool> -->
     
     <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">false</bool>
 
-     <!-- Performance profiles -->
-     <string name="config_perf_profile_prop">powerhal</string>
-     <string name="config_perf_profile_default_entry">1</string>
+    <!-- enable doze powersaving mode -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+
+    <!-- Config determines whether to update phone object when voice registration
+         state changes. Voice radio tech change will always trigger an update of
+         phone object irrespective of this config -->
+    <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
 
     <!-- Config determines whether to update phone object when voice registration
          state changes. Voice radio tech change will always trigger an update of

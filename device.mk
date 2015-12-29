@@ -74,10 +74,6 @@ PRODUCT_COPY_FILES += \
     device/motorola/victara/permissions/com.motorola.software.x_line.xml:system/etc/permissions/com.motorola.software.x_line.xml \
     device/motorola/victara/permissions/com.motorola.targetnotif.xml:system/etc/permissions/com.motorola.targetnotif.xml
 
-# System Properties
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
-
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # Screen density
@@ -89,6 +85,10 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+
+# Art
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-swap=false
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -138,16 +138,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8974 \
     libgenlock \
     memtrack.msm8974
-
-# Filesystem
-PRODUCT_PACKAGES += \
-    e2fsck \
-    fibmap.f2fs \
-    fsck.f2fs \
-    make_ext4fs \
-    mkfs.f2fs \
-    resize2fs \
-    setup_fs
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -203,20 +193,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libdivxdrmdecrypt \
-    libdashplayer \
+    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
     libOmxVdec \
-    libOmxVdecHevc \
     libOmxVenc \
-    libstagefrighthw \
-    qcmediaplayer
-
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
+    libOmxVidcCommon \
+    libstagefrighthw
 
 # Power HAL
 PRODUCT_PACKAGES += \
@@ -240,8 +226,25 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# Shim libraries
+PRODUCT_PACKAGES += \
+    libshim_camera \
+    libshim_log \
+    libshim_mdmcutback \
+    libshim_ril \
+    libshim_speakerbundle
+
+# SSL Compat
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
+
 # Support
 PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
     libcurl \
     libxml2
 
@@ -252,10 +255,6 @@ PRODUCT_COPY_FILES += \
 # Torch
 PRODUCT_PACKAGES += \
     Torch
-
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
 
 # Wifi
 PRODUCT_PACKAGES += \
