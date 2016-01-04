@@ -94,9 +94,6 @@ ro.cdma.subscription=0
 # Camera
 camera2.portability.force_api=1
 
-# frp
-ro.frp.pst=/dev/block/platform/msm_sdcc.1/by-name/frp
-
 # Play store
 ro.com.google.clientidbase.gmm=android-motorola
 
