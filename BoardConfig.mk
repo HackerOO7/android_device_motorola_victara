@@ -71,7 +71,6 @@ QCOM_BT_USE_SMD_TTY := true
 
 # Camera
 COMMON_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
-TARGET_USE_COMPAT_GRALLOC_ALIGN := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Display
@@ -137,7 +136,7 @@ BOARD_SEPOLICY_DIRS += device/motorola/victara/sepolicy
 # Vendor Init
 #TARGET_UNIFIED_DEVICE := true
 #TARGET_INIT_VENDOR_LIB := libinit_victara
-#TARGET_LIBINIT_DEFINES_FILE := device/motorola/victara/init/init_victara.cpp
+#TARGET_RECOVERY_DEVICE_MODULES := libinit_victara
 
 # Vold
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
